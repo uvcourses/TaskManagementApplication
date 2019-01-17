@@ -1,9 +1,9 @@
 import React from 'react';
-
+import TaskInboxDetails from '../UIComponents/TaskInboxDetails';
 
 const TaskInbox = () => (
     <div> 
-       <h5>TaskInbox Component</h5>
+       <h5><TaskInboxDetails/></h5>
     </div>
 );
 

@@ -15,13 +15,13 @@ render() {
             </h5>
             <div className="form-group m-2 ">
                 <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Enter Task Name"  name={this.state.taskName} onChange={this.handleChange}></input>
+                    <input type="text" className="form-control" placeholder="Enter Task Name"></input>
                 </div>
                 <div className="form-group">
-                    <input type="date" className="form-control" placeholder="Enter Task Target Date" max="3000-12-31" min="1000-01-01" onChange={this.handleChange} name={this.state.targetDate}/>
+                    <input type="date" className="form-control" placeholder="Enter Task Target Date" max="3000-12-31" min="1000-01-01"/>
                 </div>
                 <div className="form-group">
-                    <select className="form-control" placeholder="Enter Task Category" name={this.state.taskCategory} onChange={this.handleChange}>
+                    <select className="form-control" placeholder="Enter Task Category">
                     <option>Select Category</option>
                         <option>Low</option>
                         <option>Medium</option>
@@ -29,7 +29,7 @@ render() {
                     </select>
                 </div>
                 <div className="form-group">
-                    <textarea className="form-control" rows="3" value={this.state.taskSummary} onChange={this.handleChange}> </textarea>
+                    <textarea className="form-control" rows="3"> </textarea>
                 </div>
                 <div className="form-group">
                     <button type="submit" className="form-control btn btn-primary mb-2" >Add Task</button>
