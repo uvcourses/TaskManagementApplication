@@ -54,4 +54,5 @@ class TaskInboxDetails extends React.Component {
     }
 
 }
-export default TaskInboxDetails;
+export default TaskInboxDetails
+;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
-import getAppStore from './store/store';
+import getAppStore from './store/TaskStore';
 import { addBook } from './actions/books';
 import { filterText, startYear, endYear, sortBy, clear } from './actions/filters';
 import getVisibleBooks from './selectors/books';

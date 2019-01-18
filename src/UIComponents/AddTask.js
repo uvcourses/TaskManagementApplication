@@ -1,10 +1,13 @@
 import React from 'react';
 import AddTaskDetails from '../UIComponents/AddTaskDetails';
-
-const AddTask = () => (
+import {addTask}from '../actions/Task';
+import { connect } from 'react-redux';
+const AddTask = (props) => (
     <div> 
-       <h5><AddTaskDetails/></h5>
+       <h5><AddTaskDetails onSubmitTask={(task) => {
+           props.dispatch(addTask(task));
+        } }/></h5>
     </div>
 );
 
-export default AddTask;
+export default connect()(AddTask);
