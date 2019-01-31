@@ -15,7 +15,7 @@ const ApplicationRouter = () => (
             <div id="content">
                 <Header />
                 <div id="content">
-                    <Switch>
+                    <Switch>   
                         <Route path="/" component={DashBoard} exact={true} />
                         <Route path="/taskinbox" component={TaskInbox} exact={true} />
                         <Route path="/kivinbox" component={KIVInbox} exact={true} />
