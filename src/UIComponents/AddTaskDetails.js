@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'; 
+import axios from 'axios';
+import uuid from 'uuid';
 
 class AddTaskDetails extends React.Component {
     constructor(props){
@@ -7,8 +9,10 @@ class AddTaskDetails extends React.Component {
         this.onTaskNameChange = this.onTaskNameChange.bind(this);
         this.onTaskCategoryChange = this.onTaskCategoryChange.bind(this);
         this.onTaskTargetChange = this.onTaskTargetChange.bind(this);
+        this.onTaskCommentsChange = this.onTaskCommentsChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
         this.state ={
+            taskid:'',
             taskName : '',
             taskCategory :'',
             taskTargetDate: '',
@@ -28,17 +32,43 @@ class AddTaskDetails extends React.Component {
         const taskTargetDate = e.target.value;
         this.setState(() => ({ taskTargetDate: taskTargetDate }));
     }
+    onTaskCommentsChange(e) {
+        const taskComments = e.target.value;
+        this.setState(() => ({ taskComments: taskComments }));
+    }
+
+    reset() { 
+        alert("Successfully Inserted");
+        this.state.taskName="";
+        this.state.taskCategory="";
+        this.state.taskComments="";
+        this.state.taskTargetDate="";
+        this.state.taskid="";
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
         this.props.onSubmitTask(
             {
+                taskid : uuid(),
                 taskName: this.state.taskName,
                 taskCategory: this.state.taskCategory,
-                taskTargetDate: this.state.taskTargetDate
+                taskTargetDate: this.state.taskTargetDate,
+                taskComments :this.state.taskComments
             }
         );
-
+        axios.post('http://localhost:8102/Pomodora/addTask', {
+            taskid: uuid(),
+            taskName: this.state.taskName,
+            taskCategory: this.state.taskCategory,
+            taskTarget: this.state.taskTargetDate,
+            taskComments :this.state.taskComments
+        })
+        .then(res => {
+            console.log('Success'); 
+        }) 
+        reset();
     }
 render() {
     return (
@@ -63,7 +93,7 @@ render() {
                     </select>
                 </div>
                 <div className="form-group">
-                    <textarea className="form-control" rows="3" value={this.state.taskComments} > </textarea>
+                    <textarea className="form-control" rows="3" value={this.state.taskComments} onChange={this.onTaskCommentsChange}> </textarea>
                 </div>
                 <div className="form-group">
                     <button type="submit" className="form-control btn btn-primary mb-2" onClick={this.onSubmit}>Add Task</button>

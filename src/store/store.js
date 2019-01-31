@@ -5,10 +5,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const demoState = {
     Tasks: [
         {
-            id: '123abcdefghiklmn',
+            taskid: '123abcdefghiklmn',
             taskName: 'Origin',
             taskCategory: 'Origin thrusts Robert Langdon into the dangerous intersection of humankind’s two most enduring questions.',
-            taskTargetDate: 'Dan Brown'
+            taskTarget: 'Dan Brown',
+            taskComments:'important'
         }
     ],
     filters: {

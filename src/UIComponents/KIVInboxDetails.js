@@ -22,7 +22,6 @@ class KIV extends React.Component {
                                         <th scope="col">Task Name</th>
                                         <th scope="col">Task Category</th>
                                         <th scope="col">Task Target Date</th>
-                                        <th scope="col">Select</th>
                                     </tr>
                                 </thead>
                                 <tbody>
