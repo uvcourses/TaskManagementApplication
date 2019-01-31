@@ -3,7 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from '../UIComponents/Header';
 import DashBoard from '../UIComponents/DashBoard';
 import NotFound from '../components/NotFound';
-import SideBar from '../UIComponents/SideBar'
+import SideBar from '../UIComponents/SideBar';
+import AddTask from '../UIComponents/AddTask';
+import KIVInbox from '../UIComponents/KIVInbox';
+import TaskInbox from '../UIComponents/TaskInbox';
 
 const ApplicationRouter = () => (
     <BrowserRouter>
@@ -14,6 +17,9 @@ const ApplicationRouter = () => (
                 <div id="content">
                     <Switch>
                         <Route path="/" component={DashBoard} exact={true} />
+                        <Route path="/taskinbox" component={TaskInbox} exact={true} />
+                        <Route path="/kivinbox" component={KIVInbox} exact={true} />
+                        <Route path="/addtask" component={AddTask} exact={true} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

@@ -23,7 +23,10 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-
+table  {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7em;
+}
 .navbar {
     padding: 15px 10px;
     background: #fff;

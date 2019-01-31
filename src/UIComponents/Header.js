@@ -14,13 +14,10 @@ const Header = () => (
                                 <a className="nav-link" href="#homeSubmenu">Login</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
+                                <a className="nav-link" href="#">Profile</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
+                                <a className="nav-link" href="#">SignOut</a>
                             </li>
                         </ul>
                     </div>

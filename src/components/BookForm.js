@@ -14,7 +14,6 @@ export default class BookForm extends React.Component {
             author: '',
             description: '',
             published: 0,
-
             error: ''
         };
     }

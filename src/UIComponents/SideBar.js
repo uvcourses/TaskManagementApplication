@@ -12,6 +12,15 @@ const SideBar = () => (
                 <li>
                     <NavLink to='/' activeClassName='activeNav' exact={true}>Dashboard</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/taskinbox' exact={true}>Task Inbox</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/kivinbox' exact={true}>KIV Inbox</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/addtask' exact={true}>Add Task</NavLink>
+                </li>
             </ul>
         </nav>
 );
